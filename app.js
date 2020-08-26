@@ -4,7 +4,7 @@ const port = 3000;
 const Peer = require("peerjs-nodejs");
 var raspividStream = require("raspivid-stream");
 const peer = new Peer("Howl1234");
-var stream = raspividStream();
+var videoStream = raspividStream();
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
