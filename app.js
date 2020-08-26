@@ -15,11 +15,8 @@ app.listen(port, () => {
   const conn = peer.connect("HowlClient1234");
 
   videoStream.on("data", (data) => {
-    ws.send(data, { binary: true }, (error) => {
-      conn.on("open", () => {
-        conn.send(data);
-      });
-      if (error) console.error(error);
+    conn.on("open", () => {
+      conn.send(data);
     });
   });
 });
